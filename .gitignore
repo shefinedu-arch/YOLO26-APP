@@ -1,0 +1,18 @@
+# Python virtual environments
+venv/
+.venv/
+env/
+
+# Model weights downloaded at runtime
+*.pt
+*.onnx
+*.engine
+
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+
+# IDE / OS specific files
+.vscode/
+.idea/
+.DS_Store

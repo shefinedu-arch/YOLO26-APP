@@ -1,0 +1,2 @@
+(base) PS C:\Users\HI\Desktop\shefin_exam\YOLO26-app> conda activate yolo26
+(yolo26) PS C:\Users\HI\Desktop\shefin_exam\YOLO26-app> streamlit run app.py 
