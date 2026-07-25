@@ -25,28 +25,16 @@ st.set_page_config(
     page_icon="🎯",
     layout="wide",
 )
-import base64
-import os
-import streamlit as st
-
-
-def inject_mobile_app_icon(icon_path: str, app_title: str = "YOLO 26"):
+def inject_mobile_app_icon(icon_path: str):
     if os.path.exists(icon_path):
         try:
             with open(icon_path, "rb") as f:
                 encoded_icon = base64.b64encode(f.read()).decode()
-
             st.markdown(
                 f"""
                 <head>
-                    <title>{app_title}</title>
-                    <meta name="apple-mobile-web-app-title" content="{app_title}">
-                    <meta name="application-name" content="{app_title}">
-                    
-                    <!-- Updated MIME type to image/jpeg for JPG files -->
-                    <link rel="icon" type="image/jpeg" href="data:image/jpeg;base64,{encoded_icon}">
-                    <link rel="apple-touch-icon" sizes="180x180" href="data:image/jpeg;base64,{encoded_icon}">
-                    <link rel="shortcut icon" type="image/jpeg" sizes="192x192" href="data:image/jpeg;base64,{encoded_icon}">
+                    <link rel="apple-touch-icon" href="data:image/png;base64,{encoded_icon}">
+                    <link rel="icon" type="image/png" sizes="192x192" href="data:image/png;base64,{encoded_icon}">
                 </head>
                 """,
                 unsafe_allow_html=True,
@@ -55,8 +43,8 @@ def inject_mobile_app_icon(icon_path: str, app_title: str = "YOLO 26"):
             pass
 
 
-# Updated path to .jpg
-inject_mobile_app_icon("static/app_icon.jpg", app_title="YOLO 26")
+# Call the function with your icon's file path
+inject_mobile_app_icon("static/app_icon.png")
 
 MODEL_OPTIONS = {
     "YOLO26-Nano (fastest)": "yolo26n.pt",
