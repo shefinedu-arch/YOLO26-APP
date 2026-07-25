@@ -33,8 +33,8 @@ def inject_mobile_app_icon(icon_path: str):
             st.markdown(
                 f"""
                 <head>
-                    <link rel="apple-touch-icon" href="data:image/png;base64,{encoded_icon}">
-                    <link rel="icon" type="image/png" sizes="192x192" href="data:image/png;base64,{encoded_icon}">
+                    <link rel="apple-touch-icon" href="data:image/jpeg;base64,{encoded_icon}">
+                    <link rel="icon" type="image/jpeg" sizes="192x192" href="data:image/jpeg;base64,{encoded_icon}">
                 </head>
                 """,
                 unsafe_allow_html=True,
