@@ -44,7 +44,7 @@ def inject_mobile_app_icon(icon_path: str):
 
 
 # Call the function with your icon's file path
-inject_mobile_app_icon("static/app_icon.png")
+inject_mobile_app_icon("static/app_icon.jpg")
 
 MODEL_OPTIONS = {
     "YOLO26-Nano (fastest)": "yolo26n.pt",
